@@ -92,7 +92,7 @@ resource "aws_launch_template" "main" {
   instance_initiated_shutdown_behavior = "terminate"
 
   instance_type = var.instance_type
-  vpc_security_group_ids = [local_sg_id]
+  vpc_security_group_ids = [local.sg_id]
 
   # each time we apply terraform this version will be updated as default
   update_default_version = true
