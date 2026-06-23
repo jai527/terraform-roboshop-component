@@ -13,7 +13,7 @@ variable "instance_type" {
   
 }
 
-variable "Component" {
+variable "component" {
     type = string
   
 }
