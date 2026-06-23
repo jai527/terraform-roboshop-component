@@ -19,12 +19,12 @@ resource "terraform_data" "main" {
     aws_instance.main.id
   ]
 
-  connection {
+connection {
     type     = "ssh"
     user     = "ec2-user"
     password = "DevOps321"
     host     = aws_instance.main.private_ip
-  }
+  } 
 
   # ✅ Step 1: Copy file
   provisioner "file" {
@@ -199,7 +199,7 @@ resource "aws_lb_listener_rule" "main" {
   }
 }
 
-resource "terraform_data" "main_delete" {
+/* resource "terraform_data" "main_delete" {
   triggers_replace = [
     aws_instance.main.id
   ]
@@ -211,4 +211,4 @@ resource "terraform_data" "main_delete" {
     
   }
   
-}
+} */
