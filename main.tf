@@ -130,10 +130,10 @@ tag_specifications {
 resource "aws_autoscaling_group" "main" {
   name                      = "${var.project}-${var.environment}-${var.component}"
   max_size                  = 10
-  min_size                  = 2
+  min_size                  = 1
   health_check_grace_period = 120
   health_check_type         = "ELB"
-  desired_capacity          = 2
+  desired_capacity          = 1
   force_delete              = false
 
   launch_template {
