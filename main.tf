@@ -49,7 +49,7 @@ connection {
 }
 
 resource "aws_ami_from_instance" "main_ami" {
-  name               = "${var.project}-${var.environment}-${var.component}"
+  name               = "${var.project}-${var.environment}-${var.component}-ami-${formatdate("YYYY-MM-DD-HH-mm-ss", timestamp())}"
   source_instance_id = aws_instance.main.id
 
   depends_on = [aws_ec2_instance_state.main]
